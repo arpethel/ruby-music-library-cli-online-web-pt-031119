@@ -95,7 +95,7 @@ class MusicLibraryController
       puts "Playing #{song.name} by #{song.artist.name}"
     else
       input
-      play_song
+      # play_song
     end
   end
 end
