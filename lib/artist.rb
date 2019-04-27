@@ -1,8 +1,10 @@
 require 'pry'
+
 require_relative './concerns/findable'
+
 class Artist
   extend Concerns::Findable
-  attr_accessor :name, :artist
+  attr_accessor :name#, :artist
   @@all = []
 
   def initialize(name)
