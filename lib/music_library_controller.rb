@@ -61,7 +61,9 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
+
     @input = gets.strip
+
     if artist = Artist.find_by_name(@input)
       songs_sorted_by_name = artist.songs.sort_by {|song| song.name}
       songs_sorted_by_name.each.with_index(1) {|song, index| puts "#{index}. #{song.name} - #{song.genre.name}"}
@@ -71,7 +73,9 @@ class MusicLibraryController
 
   def list_songs_by_genre
     puts "Please enter the name of a genre:"
+    
     @input = gets.strip
+
     if genre = Genre.find_by_name(@input)
       songs_sorted_by_name = genre.songs.sort_by {|song| song.name}
       songs_sorted_by_name.each.with_index(1) {|song, index| puts "#{index}. #{song.artist.name} - #{song.name}"}
@@ -80,26 +84,18 @@ class MusicLibraryController
   end
 
   def play_song
-    # puts "Choose a song from the list."
-    # input = gets.strip.downcase
-    # binding.pry
     puts "Which song number would you like to play?"
     list_of_songs =  Song.all.sort {|a, b| a.name <=> b.name}
 
     input = gets.strip.to_i
-    # binding.pry
-
-    # if (1..Song.all.length).include?(input)
-    #   binding.pry
-    #   song = list_of_songs[input + 2]
-    #   puts "Playing #{song.name} by #{song.artist.name}"
-    #
-    # end
 
     if input.between?(1, Song.all.length)
       # binding.pry
       song = list_of_songs[input]
       puts "Playing #{song.name} by #{song.artist.name}"
+    else
+      input
+      play_song
     end
   end
 end
