@@ -46,37 +46,27 @@ class MusicLibraryController
 #         puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
 #       end
 # =end
-   #this gives you an array of song instances sorted by name alphabetically
-    songs_sorted_by_name = Song.all.sort_by { |song| song.name}
 
-    songs_sorted_by_name.each.with_index(1) { |song,index| puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}" }
+    songs_sorted_by_name = Song.all.sort_by {|song| song.name}
+
+    songs_sorted_by_name.each.with_index(1) {|song,index| puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"}
   end
 
   def list_artists
-    #prints all artists in the music library in a numbered list (alphabetized by artist name
-    songs_sorted_by_artist = Artist.all.sort_by do |artist| #returns an array of artists sorted by artist name
-      artist.name
-    end
-    songs_sorted_by_artist.each.with_index(1) do |artist,index|
-      puts "#{index}. #{artist.name}"
-    end
+    songs_sorted_by_artist = Artist.all.sort_by {|artist| artist.name}
+    songs_sorted_by_artist.each.with_index(1) {|artist,index| puts "#{index}. #{artist.name}"}
   end
 
   def list_genres
-    #prints all genres in the music library in a numbered list (alphabetized by genre name)
-    songs_sorted_by_genre = Genre.all.sort_by do |genre|
-      genre.name
-    end
-    songs_sorted_by_genre.each.with_index(1) do |genre,index|
-      puts "#{index}. #{genre.name}"
-    end
+    songs_sorted_by_genre = Genre.all.sort_by {|genre| genre.name}
+    songs_sorted_by_genre.each.with_index(1) {|genre,index| puts "#{index}. #{genre.name}"}
   end
 
 
   def list_songs_by_artist
-    #prints all songs by a particular artist in a numbered list (alphabetized by song name)
+
     puts "Please enter the name of an artist:"
-    input = gets.chomp
+    input = gets.strip
     if artist = Artist.find_by_name(input) #find artist that matches input
       #get the list of songs and collect a new list that is alphabetized by song name
       songs_sorted_by_name = artist.songs.sort_by do |song|
