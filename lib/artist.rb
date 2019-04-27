@@ -1,5 +1,5 @@
 require 'pry'
-require_relative './concerns/findable'
+# require_relative './concerns/findable'
 class Artist
   extend Concerns::Findable
   attr_accessor :name, :artist
