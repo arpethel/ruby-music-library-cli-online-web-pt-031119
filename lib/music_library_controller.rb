@@ -64,7 +64,7 @@ class MusicLibraryController
 
 
   def list_songs_by_artist
-    puts "Please enter the name of an artist: "
+    puts "Please enter the name of an artist:"
     input = gets.strip
     if artist = Artist.find_by_name(input)
       songs_sorted_by_name = artist.songs.sort_by {|song| song.name}
@@ -73,7 +73,7 @@ class MusicLibraryController
   end
 
   def list_songs_by_genre
-    puts "Please enter the name of a genre: "
+    puts "Please enter the name of a genre:"
     input = gets.strip
     if genre = Genre.find_by_name(input) #find genre that matches input
       #get the list of songs and collect a new list that is alphabetized by song name
