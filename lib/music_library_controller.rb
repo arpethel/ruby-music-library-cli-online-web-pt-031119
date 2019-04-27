@@ -49,9 +49,7 @@ class MusicLibraryController
    #this gives you an array of song instances sorted by name alphabetically
     songs_sorted_by_name = Song.all.sort_by { |song| song.name}
 
-    songs_sorted_by_name.each.with_index(1) do |song,index|
-      puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-    end
+    songs_sorted_by_name.each.with_index(1) { |song,index| puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}" }
   end
 
   def list_artists
