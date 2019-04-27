@@ -9,5 +9,9 @@ module Concerns
       find_by_name(name) || self.create(name)
     end
 
+    def all
+      @@all
+    end
+
   end
 end
