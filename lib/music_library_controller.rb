@@ -4,8 +4,8 @@ class MusicLibraryController
   extend Concerns::Findable
 
   def initialize(path = "./db/mp3s")
-    new_importer_object = MusicImporter.new(path)
-    new_importer_object.import
+    MusicImporter.new(path).import
+    # new_importer_object.import
   end
 
   def call
@@ -20,6 +20,7 @@ class MusicLibraryController
       puts "To play a song, enter 'play song'."
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
+
       input = gets.strip
 
       case input
@@ -36,7 +37,6 @@ class MusicLibraryController
       when "play song"
         play_song
       end
-
     end
   end
 
