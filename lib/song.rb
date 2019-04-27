@@ -44,7 +44,6 @@ class Song
     self.new(song_name, artist, genre)
   end
 
-  ##########
   def artist
     @artist
   end
