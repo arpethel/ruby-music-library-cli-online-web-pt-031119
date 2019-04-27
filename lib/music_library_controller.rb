@@ -98,7 +98,7 @@ class MusicLibraryController
 
     if input.between?(1, Song.all.length)
       # binding.pry
-      song = list_of_songs[input + 2]
+      song = list_of_songs[input]
       puts "Playing #{song.name} by #{song.artist.name}"
     end
   end
