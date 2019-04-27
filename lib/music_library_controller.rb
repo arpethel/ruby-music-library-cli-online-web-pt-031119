@@ -1,5 +1,3 @@
-require "pry"
-
 class MusicLibraryController
 
   extend Concerns::Findable
