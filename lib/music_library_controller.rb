@@ -81,7 +81,7 @@ class MusicLibraryController
 
   def play_song
     # puts "Choose a song from the list."
-    # input = gets.strip.downcase
+    input = gets.strip.downcase
     # binding.pry
     puts "Which song number would you like to play?"
     list_of_songs =  Song.all.sort {|a, b| a.name <=> b.name}
