@@ -4,7 +4,6 @@ class MusicImporter
   attr_accessor :path
 
   def initialize(filepath)
-    # binding.pry
     @path = filepath
   end
 
