@@ -76,6 +76,7 @@ class MusicLibraryController
       songs_sorted_by_name = genre.songs.sort_by {|song| song.name}
       songs_sorted_by_name.each.with_index(1) {|song,index| puts "#{index}. #{song.artist.name} - #{song.name}"}
     end
+    binding.pry
   end
 
   def play_song
