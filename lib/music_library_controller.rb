@@ -82,7 +82,7 @@ class MusicLibraryController
   def play_song
     puts "Choose a song from the list."
     input = gets.strip.downcase
-    binding.pry
+    # binding.pry
     puts "Which song number would you like to play?"
     input = gets.strip.to_i
     binding.pry
