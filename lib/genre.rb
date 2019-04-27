@@ -1,5 +1,3 @@
-require 'pry'
-
 class Genre
   extend Concerns::Findable
   attr_accessor :name, :genre
@@ -28,8 +26,6 @@ class Genre
     genre.save
     genre
   end
-
-  ##########
 
   def songs
     @songs
