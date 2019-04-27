@@ -9,8 +9,8 @@ module Concerns
       find_by_name(name) || self.create(name)
     end
 
-    def all
-      @@all
+    def destroy_all
+      @@all.clear
     end
 
   end
