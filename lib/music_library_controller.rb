@@ -76,14 +76,14 @@ class MusicLibraryController
       songs_sorted_by_name = genre.songs.sort_by {|song| song.name}
       songs_sorted_by_name.each.with_index(1) {|song,index| puts "#{index}. #{song.artist.name} - #{song.name}"}
     end
-    binding.pry
+    # binding.pry
   end
 
   def play_song
     puts "Which song number would you like to play?"
     input = gets.strip
     list_of_songs =  Song.all.sort {|a, b| a.name <=> b.name}
-
+    binding.pry
     if (1..Song.all.length).include?(input)
       binding.pry
       song = list_of_songs[input+2]
