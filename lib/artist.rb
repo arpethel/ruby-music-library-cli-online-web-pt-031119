@@ -17,9 +17,9 @@ class Artist
     @@all << self
   end
 
-  def self.all
-    @@all
-  end
+  # def self.all
+  #   @@all
+  # end
 
   def self.destroy_all
     @@all.clear
@@ -37,7 +37,6 @@ class Artist
   end
 
   def add_song(song)
-    # binding.pry
     @songs << song if @songs.include?(song) == false
     song.artist ||= self
   end
