@@ -89,12 +89,12 @@ class MusicLibraryController
 
     input = gets.strip.to_i
 
-    if input.between?(1, Song.all.length)
+    while input.between?(1, Song.all.length)
       # binding.pry
       song = list_of_songs[input]
       puts "Playing #{song.name} by #{song.artist.name}"
-    else
-      input
+    # else
+    #   input
       # play_song
     end
   end
