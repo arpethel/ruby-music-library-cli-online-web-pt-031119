@@ -1,11 +1,11 @@
 require "pry"
+
 class MusicLibraryController
 
   extend Concerns::Findable
 
   def initialize(path = "./db/mp3s")
     MusicImporter.new(path).import
-    # new_importer_object.import
   end
 
   def call
@@ -42,9 +42,10 @@ class MusicLibraryController
 
   def list_songs
 # =begin
-#     Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
-#         puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
-#       end
+    Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
+        puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
+        binding.pry
+      end
 # =end
 
     songs_sorted_by_name = Song.all.sort_by {|song| song.name}
