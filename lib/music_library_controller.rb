@@ -84,7 +84,7 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     list_of_songs =  Song.all.sort do |a, b|
-      binding.pry
+      # binding.pry
       a.name <=> b.name
     end
     input = gets.strip.to_i
